@@ -19,8 +19,7 @@ interface GeneratedResult {
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [yPosition, setYPosition] = useState(50); // Initial Y position for the first result
-  const [userExpression, setUserExpression] = useState(""); // Tracks user input
-  const [result, setResult] = useState<GeneratedResult>();
+  const [result] = useState<GeneratedResult>();
   const [isDrawing, setIsDrawing] = useState(false);
   const [color, setColor] = useState("#ffffff"); // Default color: White
   const [reset, setReset] = useState(false);
@@ -31,7 +30,7 @@ export default function Home() {
   const [brushSize, setBrushSize] = useState(5); // Default brush size
   const [history, setHistory] = useState<string[]>([]); // Undo history
   const [redoHistory, setRedoHistory] = useState<string[]>([]); // Redo history
-  const [canvasState, setCanvasState] = useState<string>(""); // Canvas state to handle undo/redo
+  const [setCanvasState] = useState<string>(""); // Canvas state to handle undo/redo
   const [canvasBgColor, setCanvasBgColor] = useState("#000000"); // Default canvas background color
   const [isSaving, setIsSaving] = useState(false); // State to trigger saving
 
