@@ -163,7 +163,6 @@ const renderLatexToCanvas = (expression: string, answer: string) => {
     setDictOfVars({});
     setHistory([]);
     setRedoHistory([]); // Clear redo history on reset
-    setCanvasState(""); // Reset canvas state
     setReset(false); // Reset flag after clearing
   }, [reset]);
 
