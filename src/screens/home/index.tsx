@@ -166,14 +166,14 @@ const renderLatexToCanvas = (expression: string, answer: string) => {
     setReset(false); // Reset flag after clearing
   }, [reset]);
 
-  const startDrawing = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect(); // Get canvas position and size
   const ctx = canvas.getContext("2d");
   if (ctx) {
-    const x = e.clientX - rect.left; // Adjust for canvas offset
-    const y = e.clientY - rect.top;
+    const x = "touches" in e ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+    const y = "touches" in e ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
     ctx.beginPath();
     ctx.moveTo(x, y);
     setIsDrawing(true);
@@ -188,15 +188,15 @@ const renderLatexToCanvas = (expression: string, answer: string) => {
     setHistory((prevHistory) => [...prevHistory, image]);
   };
 
-  const draw = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const draw = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
     if (!isDrawing) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect(); // Get canvas position and size
   const ctx = canvas.getContext("2d");
   if (ctx) {
-    const x = e.clientX - rect.left; // Adjust for canvas offset
-    const y = e.clientY - rect.top;
+    const x = "touches" in e ? e.touches[0].clientX - rect.left : e.clientX - rect.left;
+    const y = "touches" in e ? e.touches[0].clientY - rect.top : e.clientY - rect.top;
     ctx.strokeStyle = eraserMode ? canvasBgColor : color; // Eraser functionality
     ctx.lineWidth = brushSize;
     ctx.lineTo(x, y);
@@ -378,6 +378,9 @@ const renderLatexToCanvas = (expression: string, answer: string) => {
           onMouseMove={draw}
           onMouseUp={stopDrawing}
           onMouseOut={stopDrawing}
+          onTouchStart={startDrawing}
+          onTouchMove={draw}
+          onTouchEnd={stopDrawing}
         />
         {/* Draggable Latex Expressions */}
         {latexExpressions.map((latex, index) => (
