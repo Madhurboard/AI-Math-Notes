@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+# Madhurboard AI Math Notes Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 An AI-enhanced math learning platform that uses **TypeScript**, **Google Gemini API**, and **Python** for equation recognition and personalized insights. Built with a sleek design inspired by the **iOS 18 Calculator App**.
 
-Currently, two official plugins are available:
+🔗 [mathnotes.madhurpatil.me](#) | 🌐 [Portfolio](#)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **AI-Driven Equation Recognition** using Google Gemini API  
+- **TypeScript Frontend** for robust and scalable UI  
+- **Python Backend** for smooth logic handling  
+- **Sleek UI** inspired by iOS 18 Calculator App  
 
-- Configure the top-level `parserOptions` property like this:
+---
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+To run this project locally, follow the steps below:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Madhurboard-AI-Math-Notes.git
+cd Madhurboard-AI-Math-Notes
+```
+### 2. Install Dependencies
+
+```bash
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 3. Run the App Locally
+```bash
+npm run dev
 ```
+Navigate to http://localhost:3000 to view the app.
+
+## Contributing
+
+We welcome contributions from everyone! Here’s how you can get involved:
+
+### 1. Fork the Repository
+Click the "Fork" button at the top of this repository.
+
+### 2. Create a Branch
+Create a branch for your feature or bug fix:
+
+### 3. Make Changes and Commit
+Write your code, commit your changes, and ensure your code is well-tested.
+
+### 4. Open a Pull Request
+Submit a pull request with a clear description of the changes you’ve made.
+
+
+
+
+## Contact
+
+**Madhur Patil**  
+- [Website](https://madhurpatil.me)  
+- **Email**: [madhurpatil73@gmail.com](mailto:madhurpatil73@gmail.com)  
+- **GitHub**: [@madhurboard](https://github.com/madhurboard)  
